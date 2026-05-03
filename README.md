@@ -1,5 +1,5 @@
 # Team Task Manager
-
+Hi my name is Jai Verma and this is.
 A full-stack team task management app built with React, Node.js, Express, and SQLite. It covers signup/login, project membership, admin/member roles, task assignment, status updates, and a dashboard with task totals, workload, and overdue items.
 
 ## Features
@@ -82,8 +82,6 @@ npm run build
 npm start
 ```
 
-In production, Express serves the built React files from `client/dist`, so Railway only needs one deployed service.
-
 ## Railway Deployment
 
 1. Push this project to GitHub.
@@ -144,26 +142,3 @@ The main tables are:
 - `tasks`: project tasks with status, priority, due date, assignee, and creator
 
 The important relationship is `memberships`, because a user can belong to many projects and each project can have many users. Role-based access is checked through this table on protected routes.
-
-## What To Explain In The Interview
-
-I would explain the app in this order:
-
-1. Authentication: users sign up or log in, passwords are hashed with a salt, and the server returns a signed token.
-2. Authorization: every project and task request checks whether the logged-in user belongs to the project.
-3. Roles: Admins can manage members and tasks. Members can only see assigned tasks and update task status.
-4. Database schema: `users`, `projects`, `memberships`, and `tasks` keep the relationships normalized.
-5. Dashboard: the backend calculates totals, status counts, tasks per user, and overdue tasks from accessible tasks.
-6. Deployment: Railway builds the React app, starts the Express server, and the server serves both API and frontend.
-
-## Demo Video Flow
-
-For a 2-5 minute demo:
-
-1. Start on signup/login.
-2. Create a project.
-3. Add another signed-up user as a member.
-4. Create a task, set priority and due date, and assign it.
-5. Show the dashboard cards and workload section.
-6. Log in as the member and update the assigned task status.
-7. End by showing the Railway deployment and README setup notes.
